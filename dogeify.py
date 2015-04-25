@@ -61,8 +61,16 @@ def superdogeify(text):
 		elif randNum <= 20:
 			resultArray.append("Wow.")
 		resultArray.append(random.choice(adjs).capitalize())
-		resultArray.append((word + "."))
-
+		resultArray.append((word.rstrip('?:!.,;') + "."))
+	index = 0
+	for originalWord in resultArray:
+		word = originalWord
+		word = word.replace('dog', 'doge')
+		word = word.replace('please', 'plz')
+		word = word.replace('really', 'rly')
+		word = word.replace('cat', 'cate')
+		resultArray[index] = word
+		index += 1
 	return " ".join(resultArray)
 	
 	
