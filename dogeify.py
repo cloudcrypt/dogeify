@@ -47,24 +47,32 @@ def dogeify(text):
 	
 def superdogeify(text):
 	print " "
-	textArray = text.split()
+	textArray = text.lower().split()
 	nouns = []
 	resultArray = []
 	for word in textArray:
-		if nltk.pos_tag(nltk.word_tokenize(word))[0][1][:1] == "N":
+		tagSymbol = nltk.pos_tag(nltk.word_tokenize(word))[0][1][:1]
+		#if tagSymbol == "N" or tagSymbol == "J":
+		if tagSymbol == "N":
 			nouns.append(word)
 	lastAdj = ""
+	lastAdj2 = ""
 	for word in nouns:
 		randNum = random.randint(1,100)
-		if randNum <= 10:
+		if randNum <= 5 and lastAdj != "so" and lastAdj2 != "so":
 			resultArray.append("So wow.")
-		elif randNum <= 20:
+		elif randNum <= 10:
 			resultArray.append("Wow.")
 		tempAdjs = list(adjs)
 		if lastAdj in adjs: tempAdjs.remove(lastAdj)
+		if lastAdj2 in adjs: tempAdjs.remove(lastAdj2)
 		randomAdj = random.choice(tempAdjs)
+		lastAdj2 = lastAdj
 		lastAdj = randomAdj
-		resultArray.append(randomAdj.capitalize() + ( " " + word.rstrip('?:!.,;') + "."))
+		if randNum <= 30:
+			resultArray.append(randomAdj.capitalize() + ( " " + word.rstrip('?:!.,;') + "."))
+		else:
+			resultArray.append(randomAdj + ( " " + word.rstrip('?:!.,;') + "."))
 		#resultArray.append((word.rstrip('?:!.,;') + "."))
 	index = 0
 	for originalWord in resultArray:
