@@ -47,7 +47,7 @@ def dogeify(text):
 	
 def superdogeify(text):
 	print " "
-	textArray = text.split()
+	textArray = text.lower().split()
 	nouns = []
 	resultArray = []
 	for word in textArray:
@@ -69,7 +69,10 @@ def superdogeify(text):
 		randomAdj = random.choice(tempAdjs)
 		lastAdj2 = lastAdj
 		lastAdj = randomAdj
-		resultArray.append(randomAdj.capitalize() + ( " " + word.rstrip('?:!.,;') + "."))
+		if randNum <= 30:
+			resultArray.append(randomAdj.capitalize() + ( " " + word.rstrip('?:!.,;') + "."))
+		else:
+			resultArray.append(randomAdj + ( " " + word.rstrip('?:!.,;') + "."))
 		#resultArray.append((word.rstrip('?:!.,;') + "."))
 	index = 0
 	for originalWord in resultArray:
