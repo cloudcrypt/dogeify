@@ -53,13 +53,18 @@ def superdogeify(text):
 	for word in textArray:
 		if nltk.pos_tag(nltk.word_tokenize(word))[0][1][:1] == "N":
 			nouns.append(word)
+	lastAdj = ""
 	for word in nouns:
 		randNum = random.randint(1,100)
 		if randNum <= 10:
 			resultArray.append("So wow.")
 		elif randNum <= 20:
 			resultArray.append("Wow.")
-		resultArray.append(random.choice(adjs).capitalize() + ( " " + word.rstrip('?:!.,;') + "."))
+		tempAdjs = list(adjs)
+		if lastAdj in adjs: tempAdjs.remove(lastAdj)
+		randomAdj = random.choice(tempAdjs)
+		lastAdj = randomAdj
+		resultArray.append(randomAdj.capitalize() + ( " " + word.rstrip('?:!.,;') + "."))
 		#resultArray.append((word.rstrip('?:!.,;') + "."))
 	index = 0
 	for originalWord in resultArray:
