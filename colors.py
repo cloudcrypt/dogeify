@@ -73,7 +73,6 @@ htmlColors = {
 'lightskyblue':         '#87CEFA',
 'lightslategray':       '#778899',
 'lightsteelblue':       '#B0C4DE',
-'lightyellow':          '#FFFFE0',
 'lime':                 '#00FF00',
 'limegreen':            '#32CD32',
 'linen':                '#FAF0E6',
