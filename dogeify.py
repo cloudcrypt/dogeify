@@ -59,42 +59,44 @@ def superdogeify(text):
 			resultArray.append("So wow.")
 		elif randNum <= 20:
 			resultArray.append("Wow.")
-		resultArray.append(random.choice(adjs).capitalize())
-		resultArray.append((word.rstrip('?:!.,;') + "."))
+		resultArray.append(random.choice(adjs).capitalize() + ( " " + word.rstrip('?:!.,;') + "."))
+		#resultArray.append((word.rstrip('?:!.,;') + "."))
 	index = 0
 	for originalWord in resultArray:
 		word = originalWord
 		word = word.replace('dog', 'doge')
+		word = word.replace('dogee', 'doge')
 		word = word.replace('please', 'plz')
 		word = word.replace('really', 'rly')
 		word = word.replace('cat', 'cate')
 		resultArray[index] = word
 		index += 1
-	return " ".join(resultArray)
+	return resultArray
+	#return " ".join(resultArray)
 	
 	
 	
 	
 	
 def main():
-	#userString = raw_input("Enter text:")
-	userString = """
-	Two households, both alike in dignity,
-In fair Verona, where we lay our scene,
-From ancient grudge break to new mutiny,
-Where civil blood makes civil hands unclean.
-From forth the fatal loins of these two foes
-A pair of star-cross'd lovers take their life;
-Whose misadventured piteous overthrows
-Do with their death bury their parents' strife.
-The fearful passage of their death-mark'd love,
-And the continuance of their parents' rage,
-Which, but their children's end, nought could remove,
-Is now the two hours' traffic of our stage;
-The which if you with patient ears attend,
-What here shall miss, our toil shall strive to mend.
-"""
-	result = dogeify(userString)
+	userString = raw_input("Enter text:")
+	#userString = """
+# 	Two households, both alike in dignity,
+# In fair Verona, where we lay our scene,
+# From ancient grudge break to new mutiny,
+# Where civil blood makes civil hands unclean.
+# From forth the fatal loins of these two foes
+# A pair of star-cross'd lovers take their life;
+# Whose misadventured piteous overthrows
+# Do with their death bury their parents' strife.
+# The fearful passage of their death-mark'd love,
+# And the continuance of their parents' rage,
+# Which, but their children's end, nought could remove,
+# Is now the two hours' traffic of our stage;
+# The which if you with patient ears attend,
+# What here shall miss, our toil shall strive to mend.
+# """
+	result = superdogeify(userString)
 	print ""
 	print result
 

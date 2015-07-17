@@ -17,7 +17,9 @@
 		Dogeified Text:
 	</h3>
 	<h4>
-		{{ result[1] }}
+		{% for dogePair in result[1] %}
+			<div style="font-size:30px; font-family:'comic sans ms'; display:inline; color:{{ dogePair[1] }}">{{ dogePair[0] }}</div>
+		{% endfor %}
 	</h4>	
 	
 	
