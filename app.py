@@ -18,7 +18,7 @@ def index():
 @app.route("/dogeify", methods=['GET'])
 def dogeifyText():
     text = request.args.get("userText")
-    if len(text) > 750:
+    if len(text) > 2000:
         flash("Text has exceeded length limit!")
         return render_template("home.html", flashType="danger")  
     dogeTextArray = superdogeify(text)
