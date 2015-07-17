@@ -93,7 +93,7 @@
 							<ul class="dropdown-menu">
 								{% for set in session['history'] %}
 								<li>
-									<a href="/analyse?set={{ set }}">{{ set }}</a>
+									<a href="/dogeify?userText={{ set[1] }}">{{ set[0] }}</a>
 								</li>
 								{% endfor %}
 								<li class="divider"></li>
