@@ -7,12 +7,16 @@
 			Text Dogefication Complete!
 		</h1>
 	</div>
-	<h3>
-		Original Text:
-	</h3>
-	<h4>
-		{{ result[0] }}
-	</h4>	
+
+	<form role="form" action="/dogeify" method="GET">
+		<div class="form-group">
+	 <label>Text:</label><textarea class="form-control" id="userText" name="userText" type="text" placeholder="So wow." rows="5">{{ result[0] }}</textarea>
+	 <br/>
+	 <button class="btn btn-success" type="submit">Dogeify!</button>
+	 <br/>			 
+	</div>		
+	</form>	
+	
 	<h3>
 		Dogeified Text:
 	</h3>
@@ -21,24 +25,6 @@
 			<div style="font-size:30px; font-family:'comic sans ms'; display:inline; color:{{ dogePair[1] }}">{{ dogePair[0] }}</div>
 		{% endfor %}
 	</h4>	
-	
-	
-	<div class="page-header">
-		<h3>
-			Enter more text to Dogeify:
-		</h3>
-	</div>	
-	
-	
-	
-	<form role="form" action="/dogeify" method="GET">
-		<div class="form-group">
-	 <label>Text:</label><input class="form-control" id="userText" name="userText" type="text" placeholder="So wow.">
-	 <br/>
-	 <button class="btn btn-success" type="submit">Dogeify!</button>
-	 <br/>			 
-	</div>		
-	</form>	
 	
 	
 	
