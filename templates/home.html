@@ -11,8 +11,20 @@
 				<div class="form-group">
 					 <label>Text:</label><textarea class="form-control" id="userText" name="userText" type="text" placeholder="So wow." rows="5"></textarea>
 					 <br/>
-					 <button class="btn btn-success" type="submit">Dogeify!</button>
+					 <button id="submitDoge" class="btn btn-success" type="submit">Dogeify!</button>
 					 <br/>
 				</div>
 			</form>
+
+        <script type="text/javascript" src="static/js/jquery.charactercounter.js"></script>
+        <script>
+                $(function(){
+                    $("#userText").characterCounter({
+                        limit:1000,
+                        counterFormat: '%1 characters remaining',
+                        onExceed: function(){$('#submitDoge').attr('disabled', 'disabled');},
+                        onDeceed: function(){$('#submitDoge').removeAttr('disabled');}
+                    });
+                });
+        </script>
 {% endblock %}
