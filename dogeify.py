@@ -76,6 +76,10 @@ def superdogeify(text):
 		word = word.replace('cat', 'cate')
 		resultArray[index] = word
 		index += 1
+	
+	# Catch-all clause: if result is empty, just return "Wow."
+	if len(resultArray) == 0 :
+		resultArray.append("Wow.")
 	return resultArray
 	#return " ".join(resultArray)
 	
