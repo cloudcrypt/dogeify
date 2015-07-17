@@ -23,7 +23,7 @@ def dogeifyText():
     for dogePair in dogeTextArray:
         dogeResult.append([dogePair, random.choice(htmlColors.keys())])
     result = [text, dogeResult]
-    #processHistory(text)
+    processHistory(text)
     return render_template("dogetext.html", result=result)
     
 @app.route('/clearhistory')
@@ -33,7 +33,9 @@ def clearHistory():
     return render_template("home.html", flashType="success")    
 
 def processHistory(set):
-    historyPair = [set, urllib.quote_plus(set)]
+    if len(set) > 150:
+        return
+    historyPair = [set, urllib.quote_plus(set.encode('ascii', 'ignore'))]
     if 'history' not in session:
         session['history'] = []
     if historyPair in session['history']:
