@@ -1,7 +1,6 @@
 import nltk
 import random
 import sys
-from tqdm import *
 
 adjs = ['so', 'such', 'very', 'much', 'many', 'how']
 emots = ['wow', 'amaze', 'excite']
@@ -15,7 +14,7 @@ def dogeify(text):
 	textArray = text.split()
 	resultArray = []
 	index = 0 
-	for word in tqdm(textArray):
+	for word in textArray:
 		#progress = int(((index + 1) / float(len(textArray))) * 100)
 		#sys.stdout.write("\r%d%% Complete..." % progress)
 		if word.lower() == "the":
@@ -51,7 +50,7 @@ def superdogeify(text):
 	textArray = text.split()
 	nouns = []
 	resultArray = []
-	for word in tqdm(textArray):
+	for word in textArray:
 		if nltk.pos_tag(nltk.word_tokenize(word))[0][1][:1] == "N":
 			nouns.append(word)
 	for word in nouns:
