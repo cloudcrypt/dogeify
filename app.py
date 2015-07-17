@@ -9,6 +9,8 @@ app = Flask(__name__)
 #app.secret_key = '\xdc\xae\xd5\xce\x9a\x83\x8d\xe1\x0e\xe7K>\xc5O\x18\xa0\r6\x87=\xf8\xe3<\x88'
 
 
+
+
 @app.route("/")
 def index():
     return render_template("home.html")
