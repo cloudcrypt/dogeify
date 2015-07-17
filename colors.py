@@ -1,6 +1,5 @@
 htmlColors = {
 'aliceblue':            '#F0F8FF',
-'antiquewhite':         '#FAEBD7',
 'aqua':                 '#00FFFF',
 'aquamarine':           '#7FFFD4',
 'azure':                '#F0FFFF',
@@ -135,7 +134,5 @@ htmlColors = {
 'turquoise':            '#40E0D0',
 'violet':               '#EE82EE',
 'wheat':                '#F5DEB3',
-'white':                '#FFFFFF',
-'whitesmoke':           '#F5F5F5',
 'yellow':               '#FFFF00',
 'yellowgreen':          '#9ACD32'}
