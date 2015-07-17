@@ -56,15 +56,18 @@ def superdogeify(text):
 		if tagSymbol == "N":
 			nouns.append(word)
 	lastAdj = ""
+	lastAdj2 = ""
 	for word in nouns:
 		randNum = random.randint(1,100)
-		if randNum <= 10:
+		if randNum <= 5 and lastAdj != "so" and lastAdj2 != "so":
 			resultArray.append("So wow.")
-		elif randNum <= 20:
+		elif randNum <= 10:
 			resultArray.append("Wow.")
 		tempAdjs = list(adjs)
 		if lastAdj in adjs: tempAdjs.remove(lastAdj)
+		if lastAdj2 in adjs: tempAdjs.remove(lastAdj2)
 		randomAdj = random.choice(tempAdjs)
+		lastAdj2 = lastAdj
 		lastAdj = randomAdj
 		resultArray.append(randomAdj.capitalize() + ( " " + word.rstrip('?:!.,;') + "."))
 		#resultArray.append((word.rstrip('?:!.,;') + "."))
