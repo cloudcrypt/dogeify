@@ -1,0 +1,6 @@
+In this directory, you should create three files:
+
+.portfile: A port number from 0-65535 (default 5000)
+.hostfile: A host to listen to (default 127.0.0.1, use 0.0.0.0 to make it available to the outside world)
+.keyfile:  Any plaintext string (default secret_key)
+
