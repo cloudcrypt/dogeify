@@ -2,11 +2,11 @@ from flask import Flask, render_template, request, url_for, make_response, jsoni
 import random, urllib
 from dogeify import *
 from colors import *
-
+import dogeconfig
 
 app = Flask(__name__)
 # app.config.from_object(__name__)
-app.secret_key = '\xa6e\x93\xaf\xb4\xfax\xcc4\x8cB\xb6m\xce\x80\xdcu~\xa7|\xa6\xadQ\xd9'
+app.secret_key = dogeconfig.secret_key
 
 
 
@@ -54,4 +54,4 @@ def processHistory(set):
         return
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', debug=True)
+    app.run(host=dogeconfig.host, port=dogeconfig.port, debug=True)
