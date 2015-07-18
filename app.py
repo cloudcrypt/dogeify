@@ -11,9 +11,22 @@ app.secret_key = dogeconfig.secret_key
 
 
 
-@app.route("/")
+@app.route("/", methods=['GET', 'POST'])
 def index():
-    return render_template("home.html")
+    # if request.method == "GET":
+    #     text = request.args.get("userText")
+    #     if len(text) > 2000:
+    #         flash("Text has exceeded length limit!")
+    #         return render_template("home.html", flashType="danger")  
+    #     dogeTextArray = superdogeify(text)
+    #     dogeResult = []
+    #     for dogePair in dogeTextArray:
+    #         dogeResult.append([dogePair, random.choice(htmlColors.keys())])
+    #     result = [text, dogeResult]
+    #     processHistory(text)
+    #     return jsonify(list=result)
+    getMode = False
+    return render_template("home.html", getMode=getMode)    
 
 @app.route("/dogeify", methods=['GET', 'POST'])
 def dogeifyText():
@@ -31,7 +44,8 @@ def dogeifyText():
     result = [text, dogeResult]
     processHistory(text)
     if request.method == "GET":
-        return render_template("dogetext.html", result=result)
+        getMode = True
+        return render_template("home.html", getMode=getMode, result=result)
     elif request.method == "POST":
         return jsonify(list=result)
             
