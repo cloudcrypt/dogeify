@@ -1,5 +1,4 @@
 htmlColors = {
-'aliceblue':            '#F0F8FF',
 'aqua':                 '#00FFFF',
 'aquamarine':           '#7FFFD4',
 'bisque':               '#FFE4C4',
