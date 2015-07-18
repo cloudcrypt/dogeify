@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, url_for, make_response, session, redirect, g, flash
+from flask import Flask, render_template, request, url_for, make_response, jsonify, session, redirect, g, flash
 import random, urllib
 from dogeify import *
 from colors import *
@@ -15,9 +15,12 @@ app.secret_key = '\xa6e\x93\xaf\xb4\xfax\xcc4\x8cB\xb6m\xce\x80\xdcu~\xa7|\xa6\x
 def index():
     return render_template("home.html")
 
-@app.route("/dogeify", methods=['GET'])
+@app.route("/dogeify", methods=['GET', 'POST'])
 def dogeifyText():
-    text = request.args.get("userText")
+    if request.method == "GET":
+        text = request.args.get("userText")
+    else:
+        text = request.form['userText']
     if len(text) > 2000:
         flash("Text has exceeded length limit!")
         return render_template("home.html", flashType="danger")  
@@ -27,8 +30,11 @@ def dogeifyText():
         dogeResult.append([dogePair, random.choice(htmlColors.keys())])
     result = [text, dogeResult]
     processHistory(text)
-    return render_template("dogetext.html", result=result)
-    
+    if request.method == "GET":
+        return render_template("dogetext.html", result=result)
+    elif request.method == "POST":
+        return jsonify(list=result)
+            
 @app.route('/clearhistory')
 def clearHistory():
     session.pop('history')

@@ -7,14 +7,15 @@
 					Enter text to dogeify: <small></small>
 				</h1>
 			</div>
-			<form role="form" action="/dogeify" method="GET">
+			<!-- <form role="form" action="/dogeify" method="GET"> -->
 				<div class="form-group">
-					 <label>Text:</label><textarea class="form-control" id="userText" name="userText" type="text" placeholder="So wow." rows="5"></textarea>
+					 <label>Text:</label><textarea class="form-control" id="userTextArea" name="userText" type="text" placeholder="So wow." rows="5"></textarea>
 					 <br/>
-					 <button id="submitDoge" class="btn btn-success" type="submit">Dogeify!</button>
+					 <button id="submitDoge" class="btn btn-success dogeifyButton">Dogeify!</button>
 					 <br/>
 				</div>
-			</form>
+			<!-- </form> -->
+			<h4 id="getResponse"></h4>
 
         <script type="text/javascript" src="static/js/jquery.charactercounter.js"></script>
         <script>
@@ -26,5 +27,50 @@
                         onDeceed: function(){$('#submitDoge').removeAttr('disabled');}
                     });
                 });
+				$('.dogeifyButton').click(function() {
+				//Send the AJAX call to the server
+				  $.ajax({
+				  //The URL to process the request
+				    'url' : '/dogeify',
+				  //The type of request, also known as the "method" in HTML forms
+				  //Can be 'GET' or 'POST'
+				    'type' : 'POST',
+				  //Any post-data/get-data parameters
+				  //This is optional
+				    'data' : {
+				      'userText' : document.getElementById('userTextArea').value ,
+				      
+				    },
+				  //The response from the server
+				    'success' : function(data) {
+				    //You can use any jQuery/JavaScript here!!!
+				      if (data != "fail") {
+						//var text = data.list[0];
+						console.log("check");
+						var dogePairs = data.list[1];
+						console.log(dogePairs);
+						for (var i = 0; dogePair < dogePairs.length; dogePair++) {
+							var dogePair = dogePairs[i];
+							var dogeText = dogePair[0];
+							var color = dogePair[1];
+							console.log(dogeText);
+							console.log(color);
+							//var styleString = "color:" + color;
+							var div = document.createElement("div");
+							div.className = "wow";
+							div.style.color = color;
+							div.innerText = dogeText;
+							document.getElementById("getResponse").appendChild(div);
+						};	
+				        //var string1 = "<h4>" + data.list[0] + "</h4>";
+				        //var string2 = "<h4>" + data.list[1] + "</h4>";
+				        //var string3 = "<h4>" + data.list[2] + "</h4>";
+						//$(".getResponse").append(string1);
+				        //$(".getResponse").append(string2);
+				        //$(".getResponse").append(string3);
+				      }
+				    }
+				  });
+				});
         </script>
 {% endblock %}
