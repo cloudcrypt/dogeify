@@ -1,3 +1,9 @@
 .exceeded {
 	color: #f00;
 }
+
+.wow {
+	font-size:30px;
+	display:inline;
+	font-family: "Comic Sans", "Comic Sans MS", "Chalkboard", "ChalkboardSE-Regular", sans-serif;
+}
