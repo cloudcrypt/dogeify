@@ -20,7 +20,7 @@
         <script type="text/javascript" src="static/js/jquery.charactercounter.js"></script>
         <script>
                 $(function(){
-                    $("#userText").characterCounter({
+                    $("#userTextArea").characterCounter({
                         limit:1000,
                         counterFormat: '%1 characters remaining',
                         onExceed: function(){$('#submitDoge').attr('disabled', 'disabled');},
@@ -28,46 +28,27 @@
                     });
                 });
 				$('.dogeifyButton').click(function() {
-				//Send the AJAX call to the server
 				  $.ajax({
-				  //The URL to process the request
 				    'url' : '/dogeify',
-				  //The type of request, also known as the "method" in HTML forms
-				  //Can be 'GET' or 'POST'
 				    'type' : 'POST',
-				  //Any post-data/get-data parameters
-				  //This is optional
 				    'data' : {
-				      'userText' : document.getElementById('userTextArea').value ,
-				      
+				      'userText' : document.getElementById('userTextArea').value ,			      
 				    },
 				  //The response from the server
 				    'success' : function(data) {
-				    //You can use any jQuery/JavaScript here!!!
 				      if (data != "fail") {
-						//var text = data.list[0];
-						console.log("check");
+						document.getElementById("getResponse").innerHTML = "";
 						var dogePairs = data.list[1];
-						console.log(dogePairs);
-						for (var i = 0; dogePair < dogePairs.length; dogePair++) {
+						for (var i = 0; i < dogePairs.length; i++) {
 							var dogePair = dogePairs[i];
 							var dogeText = dogePair[0];
 							var color = dogePair[1];
-							console.log(dogeText);
-							console.log(color);
-							//var styleString = "color:" + color;
 							var div = document.createElement("div");
 							div.className = "wow";
 							div.style.color = color;
-							div.innerText = dogeText;
+							div.innerText = dogeText + " "; 
 							document.getElementById("getResponse").appendChild(div);
-						};	
-				        //var string1 = "<h4>" + data.list[0] + "</h4>";
-				        //var string2 = "<h4>" + data.list[1] + "</h4>";
-				        //var string3 = "<h4>" + data.list[2] + "</h4>";
-						//$(".getResponse").append(string1);
-				        //$(".getResponse").append(string2);
-				        //$(".getResponse").append(string3);
+						};
 				      }
 				    }
 				  });
