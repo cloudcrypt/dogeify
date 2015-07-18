@@ -16,7 +16,7 @@
 				</div>
 			<!-- </form> -->
 			{% if getMode %}
-				<h3 id="dogeTextTitle" style="display: none">
+				<h3 id="dogeTextTitle2">
 					Dogeified Text:
 				</h3>
 			{% endif %}
@@ -25,7 +25,7 @@
 			</h3>
 			<h4 id="getResponse"></h4>
 			{% if getMode %}
-				<h4>
+				<h4 id="getModeDisplay">
 					{% for dogePair in result[1] %}
 						<div class="wow" style=" color:{{ dogePair[1] }}">{{ dogePair[0] }}</div>
 					{% endfor %}
@@ -53,7 +53,11 @@
 				    'success' : function(data) {
 				      if (data != "fail") {
 						document.getElementById("getResponse").innerHTML = "";
-						document.getElementById("dogeTextTitle").style.display = ""; 
+						document.getElementById("dogeTextTitle").style.display = "";
+						if (document.getElementById("dogeTextTitle2")) {
+							document.getElementById("dogeTextTitle2").style.display = "none";
+							document.getElementById("getModeDisplay").style.display = "none"; 
+						};
 						var dogePairs = data.list[1];
 						for (var i = 0; i < dogePairs.length; i++) {
 							var dogePair = dogePairs[i];
