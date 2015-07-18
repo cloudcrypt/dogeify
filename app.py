@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, url_for, make_response, session, redirect, g, flash
+from flask import Flask, render_template, request, url_for, make_response, jsonify, session, redirect, g, flash
 import random, urllib
 from dogeify import *
 from colors import *
@@ -11,13 +11,29 @@ app.secret_key = dogeconfig.secret_key
 
 
 
-@app.route("/")
+@app.route("/", methods=['GET', 'POST'])
 def index():
-    return render_template("home.html")
+    # if request.method == "GET":
+    #     text = request.args.get("userText")
+    #     if len(text) > 2000:
+    #         flash("Text has exceeded length limit!")
+    #         return render_template("home.html", flashType="danger")  
+    #     dogeTextArray = superdogeify(text)
+    #     dogeResult = []
+    #     for dogePair in dogeTextArray:
+    #         dogeResult.append([dogePair, random.choice(htmlColors.keys())])
+    #     result = [text, dogeResult]
+    #     processHistory(text)
+    #     return jsonify(list=result)
+    getMode = False
+    return render_template("home.html", getMode=getMode)    
 
-@app.route("/dogeify", methods=['GET'])
+@app.route("/dogeify", methods=['GET', 'POST'])
 def dogeifyText():
-    text = request.args.get("userText")
+    if request.method == "GET":
+        text = request.args.get("userText")
+    else:
+        text = request.form['userText']
     if len(text) > 2000:
         flash("Text has exceeded length limit!")
         return render_template("home.html", flashType="danger")  
@@ -27,8 +43,12 @@ def dogeifyText():
         dogeResult.append([dogePair, random.choice(htmlColors.keys())])
     result = [text, dogeResult]
     processHistory(text)
-    return render_template("dogetext.html", result=result)
-    
+    if request.method == "GET":
+        getMode = True
+        return render_template("home.html", getMode=getMode, result=result)
+    elif request.method == "POST":
+        return jsonify(list=result)
+            
 @app.route('/clearhistory')
 def clearHistory():
     session.pop('history')

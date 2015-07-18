@@ -7,24 +7,67 @@
 					Enter text to dogeify: <small></small>
 				</h1>
 			</div>
-			<form role="form" action="/dogeify" method="GET">
+			<!-- <form role="form" action="/dogeify" method="GET"> -->
 				<div class="form-group">
-					 <label>Text:</label><textarea class="form-control" id="userText" name="userText" type="text" placeholder="So wow." rows="5"></textarea>
+					 <label>Text:</label><textarea class="form-control" id="userTextArea" name="userText" type="text" placeholder="So wow." rows="5"></textarea>
 					 <br/>
-					 <button id="submitDoge" class="btn btn-success" type="submit">Dogeify!</button>
+					 <button id="submitDoge" class="btn btn-success dogeifyButton">Dogeify!</button>
 					 <br/>
 				</div>
-			</form>
+			<!-- </form> -->
+			{% if getMode %}
+				<h3 id="dogeTextTitle" style="display: none">
+					Dogeified Text:
+				</h3>
+			{% endif %}
+			<h3 id="dogeTextTitle" style="display: none">
+				Dogeified Text:
+			</h3>
+			<h4 id="getResponse"></h4>
+			{% if getMode %}
+				<h4>
+					{% for dogePair in result[1] %}
+						<div class="wow" style=" color:{{ dogePair[1] }}">{{ dogePair[0] }}</div>
+					{% endfor %}
+				</h4>
+			{% endif %}
 
         <script type="text/javascript" src="static/js/jquery.charactercounter.js"></script>
         <script>
                 $(function(){
-                    $("#userText").characterCounter({
+                    $("#userTextArea").characterCounter({
                         limit:1000,
                         counterFormat: '%1 characters remaining',
                         onExceed: function(){$('#submitDoge').attr('disabled', 'disabled');},
                         onDeceed: function(){$('#submitDoge').removeAttr('disabled');}
                     });
                 });
+				$('.dogeifyButton').click(function() {
+				  $.ajax({
+				    'url' : '/dogeify',
+				    'type' : 'POST',
+				    'data' : {
+				      'userText' : document.getElementById('userTextArea').value ,			      
+				    },
+				  //The response from the server
+				    'success' : function(data) {
+				      if (data != "fail") {
+						document.getElementById("getResponse").innerHTML = "";
+						document.getElementById("dogeTextTitle").style.display = ""; 
+						var dogePairs = data.list[1];
+						for (var i = 0; i < dogePairs.length; i++) {
+							var dogePair = dogePairs[i];
+							var dogeText = dogePair[0];
+							var color = dogePair[1];
+							var div = document.createElement("div");
+							div.className = "wow";
+							div.style.color = color;
+							div.innerText = dogeText + " "; 
+							document.getElementById("getResponse").appendChild(div);
+						};
+				      }
+				    }
+				  });
+				});
         </script>
 {% endblock %}
