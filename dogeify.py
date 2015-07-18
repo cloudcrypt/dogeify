@@ -11,9 +11,11 @@ def superdogeify(text):
 	nouns = []
 	resultArray = []
 	for word in textArray:
+		if word.lower() in adjs:
+			continue
 		tagSymbol = nltk.pos_tag(nltk.word_tokenize(word))[0][1][:1]
-		#if tagSymbol == "N" or tagSymbol == "J":
-		if tagSymbol == "N":
+		if tagSymbol == "N" or tagSymbol == "J":
+			#if tagSymbol == "N":
 			nouns.append(word)
 	lastAdj = ""
 	lastAdj2 = ""
