@@ -30,6 +30,7 @@ def index():
 
 @app.route("/dogeify", methods=['GET', 'POST'])
 def dogeifyText():
+    text = ""
     if request.method == "GET":
         text = request.args.get("userText")
     else:
@@ -44,8 +45,9 @@ def dogeifyText():
     result = [text, dogeResult]
     processHistory(text)
     if request.method == "GET":
+	origText = text
         getMode = True
-        return render_template("home.html", getMode=getMode, result=result)
+        return render_template("home.html", getMode=getMode, result=result, origText=origText)
     elif request.method == "POST":
         return jsonify(list=result)
             
