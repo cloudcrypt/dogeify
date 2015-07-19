@@ -26,7 +26,7 @@ def index():
     #     processHistory(text)
     #     return jsonify(list=result)
     getMode = False
-    return render_template("home.html", getMode=getMode)    
+    return render_template("home.html", getMode=getMode, result=[])    
 
 @app.route("/dogeify", methods=['GET', 'POST'])
 def dogeifyText():
@@ -36,8 +36,8 @@ def dogeifyText():
     else:
         text = request.form['userText']
     if len(text) > 2000:
-        flash("Text has exceeded length limit!")
-        return render_template("home.html", flashType="danger")  
+        errormsg = [["such error.", random.choice(htmlColors.keys())]]
+        return render_template("home.html", getMode=True, result=[text, errormsg])
     dogeTextArray = superdogeify(text)
     dogeResult = []
     for dogePair in dogeTextArray:
@@ -45,9 +45,8 @@ def dogeifyText():
     result = [text, dogeResult]
     processHistory(text)
     if request.method == "GET":
-	origText = text
         getMode = True
-        return render_template("home.html", getMode=getMode, result=result, origText=origText)
+        return render_template("home.html", getMode=getMode, result=result)
     elif request.method == "POST":
         return jsonify(list=result)
             
