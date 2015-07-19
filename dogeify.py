@@ -1,18 +1,41 @@
 import nltk
 import random
 import sys
+import re
 
 adjs = ['so', 'such', 'very', 'much', 'many', 'how']
 emots = ['wow', 'amaze', 'excite']
 
+# Always strip away double-quotes, smart double-quotes, em-dashes (--)
+# and ellipses (...)
+stripPattern=ur'["\u201c\u201d\u2014\u2026]'
+lstripPattern='-'
+rstripPattern=u'?:!.,;'
+
+# replace unicode chars that would otherwise confuse nltk (i.e. smart quotes)
+def scrubunicode(text):
+	# simplify smart single-quotes
+	text = text.replace(u'\u2018', "'").replace(u'\u2019', "'")
+	return re.sub(stripPattern, "", text)
+
 def superdogeify(text):
 	print " "
+	
+	text = scrubunicode(text)
+	
 	textArray = text.split()
 	nouns = []
 	resultArray = []
 	for word in textArray:
 		if word.lower() in adjs:
 			continue
+		# strip away unwanted characters
+		word = word.lstrip(lstripPattern).rstrip(rstripPattern)
+
+		# If the entire word was scrubbed away, don't pass it to NLTK!
+		if len(word) < 1:
+			continue
+		
 		tagSymbol = nltk.pos_tag(nltk.word_tokenize(word))[0][1][:1]
 		if tagSymbol == "N" or tagSymbol == "J":
 			nouns.append(word)
@@ -32,7 +55,7 @@ def superdogeify(text):
 		lastAdj = randomAdj
 		if randNum <= 10:
 			randomAdj = randomAdj.capitalize()
-		resultArray.append(randomAdj + ( " " + word.lower().rstrip('?:!.,;') + "."))
+		resultArray.append(randomAdj + ( " " + word.lower() + "."))
 	index = 0
 	for originalWord in resultArray:
 		word = originalWord
