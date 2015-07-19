@@ -71,11 +71,11 @@
 				  //The response from the server
 				    'success' : function(data) {
 				      if (data != "fail") {
-						document.getElementById("getResponse").innerHTML = "";
-						document.getElementById("dogeTextTitle").style.display = "";
-						if (document.getElementById("dogeTextTitle2")) {
-							document.getElementById("dogeTextTitle2").style.display = "none";
-							document.getElementById("getModeDisplay").style.display = "none"; 
+						$('#getResponse').html('')
+						$('#dogeTextTitle').hide()
+						if ($('#dogeTextTitle2')) {
+							$('#dogeTextTitle2').hide()
+							$('#getModeDisplay').hide(); 
 						};
 						var dogePairs = data.list[1];
 						for (var i = 0; i < dogePairs.length; i++) {
@@ -86,7 +86,7 @@
 							div.className = "wow";
 							div.style.color = color;
 							div.innerText = dogeText + " "; 
-							document.getElementById("getResponse").appendChild(div);
+							$('#getResponse').append(div);
 						};
 				      }
 				    }
