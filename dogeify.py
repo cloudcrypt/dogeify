@@ -31,7 +31,7 @@ def superdogeify(text):
 		lastAdj2 = lastAdj
 		lastAdj = randomAdj
 		if randNum <= 10:
-			randomAdj.capitalize()
+			randomAdj = randomAdj.capitalize()
 		resultArray.append(randomAdj + ( " " + word.lower().rstrip('?:!.,;') + "."))
 	index = 0
 	for originalWord in resultArray:
