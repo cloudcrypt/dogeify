@@ -45,7 +45,8 @@ def superdogeify(text):
 		randNum = random.randint(1,100)
 		if randNum <= 5 and lastAdj != "so" and lastAdj2 != "so":
 			resultArray.append("so wow.")
-		elif randNum <= 10:
+		randNum = random.randint(1,100)
+		if randNum <= 10:
 			resultArray.append("wow.")
 		tempAdjs = list(adjs)
 		if lastAdj in adjs: tempAdjs.remove(lastAdj)
@@ -53,6 +54,7 @@ def superdogeify(text):
 		randomAdj = random.choice(tempAdjs)
 		lastAdj2 = lastAdj
 		lastAdj = randomAdj
+		randNum = random.randint(1,100)
 		if randNum <= 10:
 			randomAdj = randomAdj.capitalize()
 		resultArray.append(randomAdj + ( " " + word.lower() + "."))
