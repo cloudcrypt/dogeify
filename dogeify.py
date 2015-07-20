@@ -5,6 +5,7 @@ import re
 
 adjs = ['so', 'such', 'very', 'much', 'many', 'how']
 emots = ['wow', 'amaze', 'excite']
+errors = ['wow.', 'so try. many plz. such again.', 'so wow.', 'many empty. so nothing. wow.']
 
 # Always strip away double-quotes, smart double-quotes, em-dashes (--)
 # and ellipses (...)
@@ -79,7 +80,7 @@ def superdogeify(text):
 	
 	# Catch-all clause: if result is empty, just return "Wow."
 	if len(resultArray) == 0 :
-		resultArray.append("wow")
+		resultArray.append(random.choice(errors))
 	return resultArray
 
 
