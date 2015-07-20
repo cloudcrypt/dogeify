@@ -3,13 +3,13 @@
 
 {% block body %}
 			<div class="page-header">
-				<h1>
+				<h3>
 					Enter text to dogeify: <small></small>
-				</h1>
+				</h3>
 			</div>
 			<!-- <form role="form" action="/dogeify" method="GET"> -->
 				<div class="form-group">
-					 <label>Text:</label><textarea class="form-control" id="userTextArea" name="userText" type="text" placeholder="So wow." rows="5">{{ result[0] }}</textarea>
+					 <textarea class="form-control" id="userTextArea" name="userText" type="text" placeholder="So wow." rows="4">{{ result[0] }}</textarea>
 					 <br/>
 					 <button id="submitDoge" class="btn btn-success dogeifyButton">Dogeify!</button>
 					 <br/>
@@ -20,6 +20,7 @@
 					Dogeified Text:
 				</h3>
 			{% endif %}
+			<a name="output"></a>
 			<h3 id="dogeTextTitle" style="display: none">
 				Dogeified Text:
 			</h3>

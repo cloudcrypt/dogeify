@@ -7,3 +7,13 @@
 	display:inline;
 	font-family: "Comic Sans", "Comic Sans MS", "Chalkboard", "ChalkboardSE-Regular", sans-serif;
 }
+
+.page-header{
+	text-align:center;
+}
+
+.form-group{
+	margin-left:auto;
+	margin-right:auto;
+	width:80%;
+}
