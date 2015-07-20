@@ -76,7 +76,7 @@ def superdogeify(text):
 def main():
 	userString = raw_input("Enter text:")
 	result = superdogeify(userString)
-	print "" # so newline
+	print "" # so newline, many comment # such inception # wow?
 	print result
 
 
