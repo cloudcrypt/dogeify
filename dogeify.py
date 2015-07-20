@@ -46,12 +46,13 @@ def superdogeify(text):
 	lastEmot2 = ""
 	for word in nouns:
 		randNum = random.randint(1,100)
+		print randNum
 		if randNum <= 5 and lastAdj != "so" and lastAdj2 != "so":
 			tempEmots = list(emots)
 			if lastEmot in emots: tempEmots.remove(lastEmot)
-			if lastEMot2 in emots: tempEmots.remove(lastEmot2)
+			#if lastEmot2 in emots: tempEmots.remove(lastEmot2)
 			randomEmot = random.choice(tempEmots)
-			lastEmot2 = lastEmot
+			#lastEmot2 = lastEmot
 			lastEmot = randomEmot
 			resultArray.append("so " + randomEmot + ".")
 		randNum = random.randint(1,100)
