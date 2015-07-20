@@ -33,6 +33,7 @@
 </head>
 
 <body>
+
 <div class="container">
 	<div class="row clearfix">
 		<div class="col-md-12 column">
@@ -40,6 +41,31 @@
 				<div class="navbar-header">
 					 <a class="navbar-brand" href="/">Dogeify</a>
 				</div>
+				<ul class="nav navbar-nav navbar-right aboutbutton">
+				        <li><a href="#" id="aboutDogeLink" data-toggle="modal" data-target="#aboutDogeModal">About</a></li>
+				</ul>
+				
+				<div class="modal fade" id="aboutDogeModal" role="dialog">
+				    <div class="modal-dialog suchDialog">
+				      <div class="modal-content">
+				        <div class="modal-header">
+				          <button type="button" class="close" data-dismiss="modal">&times;</button>
+				          <h4 class="modal-title">About Dogeify</h4>
+				        </div>
+						<div class="modal-body center" style="text-align:center"><center>
+							<h4>dogeify any text! wow, very utility!</h4>
+							<p>by <a href="https://github.com/cloudcrypt">Daniel Dogestoor</a>
+								 and <a href="http://thisishughyoung.com">Hugh Young.</a></p>
+							<p>such <a href="https://github.com/cloudcrypt/dogeify">Github</a>.</p>
+								 <h6>wow</h6>
+						</center></div>
+				        <div class="modal-footer">
+				          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+				        </div>
+				      </div>
+				    </div>
+				  </div>				
+				
 			</nav>
 			
 {% if flashType != "" %}
