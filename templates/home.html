@@ -31,70 +31,31 @@
 					{% endfor %}
 				</h4>
 			{% endif %}
-
-        <script type="text/javascript" src="static/js/jquery.charactercounter.js"></script>
         <script>
-		// Utility function to get the value of a get request argument
-		function get(name){
-		   if(name=(new RegExp('[?&]'+encodeURIComponent(name)+'=([^&]*)')).exec(location.search))
-		   return decodeURIComponent(name[1]);
-		}
-
-                $(function(){
+        $(function(){
 		    // Update the textarea if the user scrubs through browser history
 		    window.addEventListener("popstate", function(e) {
-			var newText = window.get("userText")
-			var blankInputSuffix = "dogeify?userText="
+				var newText = window.get("userText")
+				var blankInputSuffix = "dogeify?userText="
 		        $('#userTextArea').val(newText)
-			if (newText == null) {
-				$('#getResponse').html("")
-			} else {
-		          sendDogeAjax($('#userTextArea').val())
-			}
+				if (newText == null) {
+					$('#getResponse').html("")
+				} else {
+		          doDogeAjax($('#userTextArea').val())
+				}
 		    });
 
 		    //init Character counter
-                    $("#userTextArea").characterCounter({
+            $("#userTextArea").characterCounter({
                         limit:2000,
                         counterFormat: '%1 characters remaining',
                         onExceed: function(){$('#submitDoge').attr('disabled', 'disabled');},
                         onDeceed: function(){$('#submitDoge').removeAttr('disabled');}
-                    });
-                });
-		function sendDogeAjax(text) {
-				  $.ajax({
-				    'url' : '/dogeify',
-				    'type' : 'POST',
-				    'data' : {
-				      'userText' : text
-				    },
-				  //The response from the server
-				    'success' : function(data) {
-				      if (data != "fail") {
-						$('#getResponse').html('')
-						$('#dogeTextTitle').hide()
-						if ($('#dogeTextTitle2')) {
-							$('#dogeTextTitle2').hide()
-							$('#getModeDisplay').hide(); 
-						};
-						var dogePairs = data.list[1];
-						for (var i = 0; i < dogePairs.length; i++) {
-							var dogePair = dogePairs[i];
-							var dogeText = dogePair[0];
-							var color = dogePair[1];
-							var div = document.createElement("div");
-							div.className = "wow";
-							div.style.color = color;
-							div.innerText = dogeText + " "; 
-							$('#getResponse').append(div);
-						};
-				      }
-				    }
-				  });
-		}
-				$('.dogeifyButton').click(function() {
-				  sendDogeAjax($('#userTextArea').val())
+            });
+			$('.dogeifyButton').click(function() {
+				  doDogeAjax($('#userTextArea').val())
 				  history.pushState(null, null, "dogeify?userText=" + encodeURIComponent($('#userTextArea').val()))
-				});
+			});
+		});
         </script>
 {% endblock %}
