@@ -5,7 +5,6 @@ import re
 
 adjs = ['so', 'such', 'very', 'much', 'many', 'how']
 emots = ['wow', 'amaze', 'excite']
-errors = ['wow.', 'so try. many plz. such again.', 'so wow.', 'many empty. so nothing. wow.']
 
 # Always strip away double-quotes, smart double-quotes, em-dashes (--)
 # and ellipses (...)
@@ -43,16 +42,13 @@ def superdogeify(text):
 	lastAdj = ""
 	lastAdj2 = ""
 	lastEmot = ""
-	lastEmot2 = ""
 	for word in nouns:
 		randNum = random.randint(1,100)
 		print randNum
 		if randNum <= 5 and lastAdj != "so" and lastAdj2 != "so":
 			tempEmots = list(emots)
 			if lastEmot in emots: tempEmots.remove(lastEmot)
-			#if lastEmot2 in emots: tempEmots.remove(lastEmot2)
 			randomEmot = random.choice(tempEmots)
-			#lastEmot2 = lastEmot
 			lastEmot = randomEmot
 			resultArray.append("so " + randomEmot + ".")
 		randNum = random.randint(1,100)
@@ -81,7 +77,7 @@ def superdogeify(text):
 	
 	# Catch-all clause: if result is empty, just return "Wow."
 	if len(resultArray) == 0 :
-		resultArray.append(random.choice(errors))
+		resultArray.append("wow")
 	return resultArray
 
 
