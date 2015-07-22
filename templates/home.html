@@ -58,5 +58,15 @@
 				  history.pushState(null, null, "dogeify?userText=" + encodeURIComponent($('#userTextArea').val()))
 			});
 		});
+		
+		jQuery(document).ready(function($){
+		var deviceAgent = navigator.userAgent.toLowerCase();
+		var agentID = deviceAgent.match(/(iphone|ipod|ipad)/);
+		    if (agentID) {
+ 
+			$('html').addClass('manyios');
+
+		    }
+		});
         </script>
 {% endblock %}
