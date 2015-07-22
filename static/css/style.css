@@ -48,6 +48,7 @@ display: block!important;
 
 .navbar-nav>li, .navbar-nav {
 float: left !important;
+border-left: solid 1px #e7e7e7;
 }
 
 .navbar-nav.navbar-right:last-child {
