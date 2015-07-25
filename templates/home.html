@@ -56,6 +56,7 @@
 			$('.dogeifyButton').click(function() {
 				  doDogeAjax($('#userTextArea').val())
 				  history.pushState(null, null, "dogeify?userText=" + encodeURIComponent($('#userTextArea').val()))
+				  ga('send', 'pageview', "dogeify?userText=" + encodeURIComponent($('#userTextArea').val()));
 			});
 		});
 		
