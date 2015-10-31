@@ -8,6 +8,7 @@ hostfile = "config/.hostfile"
 port = 5000
 host = '127.0.0.1' # set to '0.0.0.0' to make it available to the outside world
 secret_key = 'secret_key'
+debug = True
 
 
 
@@ -33,7 +34,9 @@ try:
 	f = open(hostfile)
 	s = f.readline().strip()
 	host = s
+	debug = False
 	print("running on " + s)
 except:
-	print("could not read keyfile, using default: " + host)
+	print("could not read hostfile, using default: " + host)
+	print("debug mode: " + str(debug))
 

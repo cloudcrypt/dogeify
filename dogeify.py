@@ -18,11 +18,8 @@ def scrubunicode(text):
 	text = text.replace(u'\u2018', "'").replace(u'\u2019', "'")
 	return re.sub(stripPattern, "", text)
 
-def superdogeify(text):
-	print " "
-	
+def dogeify(text):	
 	text = scrubunicode(text)
-	
 	textArray = text.split()
 	nouns = []
 	resultArray = []
@@ -44,7 +41,6 @@ def superdogeify(text):
 	lastEmot = ""
 	for word in nouns:
 		randNum = random.randint(1,100)
-		print randNum
 		if randNum <= 5 and lastAdj != "so" and lastAdj2 != "so":
 			tempEmots = list(emots)
 			if lastEmot in emots: tempEmots.remove(lastEmot)
@@ -83,7 +79,7 @@ def superdogeify(text):
 
 def main():
 	userString = raw_input("Enter text:")
-	result = superdogeify(userString)
+	result = dogeify(userString)
 	print "" # so newline, many comment # such inception # wow?
 	print result
 

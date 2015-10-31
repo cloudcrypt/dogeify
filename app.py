@@ -22,7 +22,7 @@ def dogeifyText():
     if len(text) > 2000:
         errormsg = [["such error.", random.choice(htmlColors.keys())]]
         return render_template("home.html", getMode=True, result=[text, errormsg])
-    dogeTextArray = superdogeify(text)
+    dogeTextArray = dogeify(text)
     dogeResult = []
     for dogePair in dogeTextArray:
         dogeResult.append([dogePair, random.choice(htmlColors.keys())])
@@ -34,4 +34,4 @@ def dogeifyText():
         return jsonify(list=result)
             
 if __name__ == '__main__':
-    app.run(host=dogeconfig.host, port=dogeconfig.port)
+    app.run(host=dogeconfig.host, port=dogeconfig.port, debug=dogeconfig.debug)
