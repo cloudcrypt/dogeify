@@ -111,7 +111,14 @@ at three, on the teeth. Lo. Lee. Ta.
 
 She was Lo, plain Lo, in the morning, standing four feet ten in one
 sock. She was Lola in slacks. She was Dolly at school. She was Dolores on
-the dotted line. But in my arms she was always Lolita."""
+the dotted line. But in my arms she was always Lolita.""",
+
+#The Great Gatsby (ending) - F. Scott Fitzgerald
+"""Gatsby believed in the green light, the orgastic future that year by year 
+recedes before us. It eluded us then, but that's no matter--tomorrow we will 
+run faster, stretch out our arms farther. . . . And one fine morning----
+
+So we beat on, boats against the current, borne back ceaselessly into the past.""",
 
 #===============================================================
 # Politics
