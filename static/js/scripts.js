@@ -17,12 +17,9 @@ function doDogeAjax(text) {
 		  //The response from the server
 		    'success' : function(data) {
 		      if (data != "fail") {
-				$('#getResponse').html('')
-				$('#dogeTextTitle').hide()
-				if ($('#dogeTextTitle2')) {
-					$('#dogeTextTitle2').hide()
-					$('#getModeDisplay').hide(); 
-				};
+                if ($('#dogeTextTitle2')) { $('#getDiv').hide() };
+				$('#getResponse').html('');
+                $("#dogeTextTitle").show();
 				var dogePairs = data.list[1];
 				for (var i = 0; i < dogePairs.length; i++) {
 					var dogePair = dogePairs[i];

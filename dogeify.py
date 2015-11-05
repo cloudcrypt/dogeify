@@ -2,6 +2,7 @@ import nltk
 import random
 import sys
 import re
+from colors import *
 
 adjs = ['so', 'such', 'very', 'much', 'many', 'how']
 emots = ['wow', 'amaze', 'excite']
@@ -75,6 +76,16 @@ def dogeify(text):
 	if len(resultArray) == 0 :
 		resultArray.append("wow")
 	return resultArray
+
+def colorify(dogeArray):
+	coloredArray = []
+	for dogePair in dogeArray:
+		coloredArray.append([dogePair, random.choice(htmlColors.keys())])
+	return coloredArray
+
+
+
+
 
 
 def main():
