@@ -31,6 +31,14 @@ def dogeifyText():
         return render_template("home.html", getMode=True, result=result)
     elif request.method == "POST":
         return jsonify(list=result)
+
+@app.route("/lucky")
+def lucky():
+    quote = "Confucius say, man who is lucky is man with many luck."
+    dogeTextArray = dogeify(quote)
+    dogeResult = colorify(dogeTextArray)
+    result = [quote, dogeResult]
+    return jsonify(list=result)
             
 
 

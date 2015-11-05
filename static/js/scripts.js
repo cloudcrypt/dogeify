@@ -36,6 +36,33 @@ function doDogeAjax(text) {
 		  });
 }
 
+function doLuckyAjax() {
+          $.ajax({
+            'url' : '/lucky',
+          //The response from the server
+            'success' : function(data) {
+              if (data != "fail") {
+                if ($('#dogeTextTitle2')) { $('#getDiv').hide() };
+                $('#getResponse').html('');
+                $("#dogeTextTitle").show();
+                var undogedText = data.list[0];
+                $('#userTextArea').val(undogedText);
+                var dogePairs = data.list[1];
+                for (var i = 0; i < dogePairs.length; i++) {
+                    var dogePair = dogePairs[i];
+                    var dogeText = dogePair[0];
+                    var color = dogePair[1];
+                    var div = document.createElement("div");
+                    div.className = "wow";
+                    div.style.color = color;
+                    div.innerText = dogeText + " "; 
+                    $('#getResponse').append(div);
+                };
+              }
+            }
+          });
+}
+
 /**
  * Character Counter v1.5.1
  * ======================

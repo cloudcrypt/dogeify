@@ -37,6 +37,10 @@
 
         <script>
         $(function(){
+        	$.ajaxSetup ({
+      			// Disable caching of AJAX responses
+      			cache: false,
+			});
 		    // Update the textarea if the user scrubs through browser history
 		    window.addEventListener("popstate", function(e) {
 				var newText = window.get("userText")
@@ -58,6 +62,11 @@
             });
 			$('.dogeifyButton').click(function() {
 				  doDogeAjax($('#userTextArea').val())
+				  history.pushState(null, null, "dogeify?userText=" + encodeURIComponent($('#userTextArea').val()))
+				  ga('send', 'pageview', "dogeify?userText=" + encodeURIComponent($('#userTextArea').val()));
+			});
+			$('.luckyButton').click(function() {
+				  doLuckyAjax()
 				  history.pushState(null, null, "dogeify?userText=" + encodeURIComponent($('#userTextArea').val()))
 				  ga('send', 'pageview', "dogeify?userText=" + encodeURIComponent($('#userTextArea').val()));
 			});
