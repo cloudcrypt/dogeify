@@ -1,6 +1,7 @@
 from flask import Flask, render_template, request, url_for, make_response, jsonify, session, redirect, g, flash
 import random, urllib
 from dogeify import *
+from quotes import *
 import dogeconfig
 
 app = Flask(__name__)
@@ -31,6 +32,14 @@ def dogeifyText():
         return render_template("home.html", getMode=True, result=result)
     elif request.method == "POST":
         return jsonify(list=result)
+
+@app.route("/lucky")
+def lucky():
+    quote = random.choice(quotes)
+    dogeTextArray = dogeify(quote)
+    dogeResult = colorify(dogeTextArray)
+    result = [quote, dogeResult]
+    return jsonify(list=result)
             
 
 
