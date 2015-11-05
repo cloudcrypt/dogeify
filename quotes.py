@@ -1,5 +1,9 @@
 quotes = [
-#Romeo and Juliet - Shakespeare
+
+#===============================================================
+# Shakespeare
+
+#Romeo and Juliet
 """Two households, both alike in dignity,
 In fair Verona, where we lay our scene,
 From ancient grudge break to new mutiny,
@@ -15,7 +19,7 @@ Is now the two hours' traffic of our stage;
 The which if you with patient ears attend,
 What here shall miss, our toil shall strive to mend.""",
 
-#Hamlet - Shakespeare
+#Hamlet
 """To be, or not to be - that is the question:
 Whether 'tis nobler in the mind to suffer
 The slings and arrows of outrageous fortune
@@ -52,6 +56,25 @@ And lose the name of action.  -  Soft you now,
 The fair Ophelia!  -  Nymph, in thy orisons
 Be all my sins remembered.""",
 
+#Sonnet 116
+"""Let me not to the marriage of true minds
+Admit impediments. Love is not love
+Which alters when it alteration finds,
+Or bends with the remover to remove:
+O no; it is an ever-fixed mark, 
+That looks on tempests, and is never shaken;
+It is the star to every wandering bark,
+Whose worth's unknown, although his height be taken.
+Love's not Time's fool, though rosy lips and cheeks 
+Within his bending sickle's compass come; 
+Love alters not with his brief hours and weeks, 
+But bears it out even to the edge of doom.
+  If this be error and upon me proved,
+  I never writ, nor no man ever loved.""",
+
+#===============================================================
+# Literature
+
 #Tale of Two Cities - C. Dickens
 """It was the best of times,
 it was the worst of times,
@@ -71,7 +94,7 @@ in short, the period was so far like the present period, that some of
 its noisiest authorities insisted on its being received, for good or for
 evil, in the superlative degree of comparison only.""",
 
-#Metamorphosis - Franz Kafka
+#Metamorphosis - F. Kafka
 """One morning, when Gregor Samsa woke from troubled dreams, 
 he found himself transformed in his bed into a horrible vermin. 
 He lay on his armour-like back, and if he lifted his head a 
@@ -81,7 +104,20 @@ cover it and seemed ready to slide off any moment. His many legs,
 pitifully thin compared with the size of the rest of him, waved 
 about helplessly as he looked.""",
 
-#Communist Manifesto
+#Lolita - V. Darkbloom
+"""Lolita, light of my life, fire of my loins. My sin, my soul. Lo-lee-ta:
+the tip of the tongue taking a trip of three steps down the palate to tap,
+at three, on the teeth. Lo. Lee. Ta.
+
+She was Lo, plain Lo, in the morning, standing four feet ten in one
+sock. She was Lola in slacks. She was Dolly at school. She was Dolores on
+the dotted line. But in my arms she was always Lolita."""
+
+#===============================================================
+# Politics
+
+
+#Communist Manifesto - Marx & Engels
 """The history of all hitherto existing society is the history 
 of class struggles.
 
@@ -124,13 +160,40 @@ evinces a design to reduce them under absolute Despotism, it is their right,
 it is their duty, to throw off such Government, and to provide new Guards 
 for their future security.""",
 
-#Lolita - Vivian Darkbloom
-"""Lolita, light of my life, fire of my loins. My sin, my soul. Lo-lee-ta:
-the tip of the tongue taking a trip of three steps down the palate to tap,
-at three, on the teeth. Lo. Lee. Ta.
+#Gettysburg Address - A. Lincoln
+"""Four score and seven years ago our fathers brought forth on this 
+continent, a new nation, conceived in Liberty, and dedicated to the 
+proposition that all men are created equal.
 
-She was Lo, plain Lo, in the morning, standing four feet ten in one
-sock. She was Lola in slacks. She was Dolly at school. She was Dolores on
-the dotted line. But in my arms she was always Lolita"""
+Now we are engaged in a great civil war, testing whether that nation, 
+or any nation so conceived and so dedicated, can long endure. We are 
+met on a great battle-field of that war. We have come to dedicate a portion 
+of that field, as a final resting place for those who here gave their lives 
+that that nation might live. It is altogether fitting and proper that we 
+should do this.
+
+But, in a larger sense, we can not dedicate -- we can not consecrate -- 
+we can not hallow -- this ground. The brave men, living and dead, who 
+struggled here, have consecrated it, far above our poor power to add or 
+detract. The world will little note, nor long remember what we say here, 
+but it can never forget what they did here. It is for us the living, rather, 
+to be dedicated here to the unfinished work which they who fought here have 
+thus far so nobly advanced. It is rather for us to be here dedicated to 
+the great task remaining before us -- that from these honored dead we take 
+increased devotion to that cause for which they gave the last full measure 
+of devotion -- that we here highly resolve that these dead shall not have 
+died in vain -- that this nation, under God, shall have a new birth of 
+freedom -- and that government of the people, by the people, for the 
+people, shall not perish from the earth.""",
+
+#===============================================================
+#TONGUE TWISTERS?!??
+
+#Peter Piper
+"""Peter Piper picked a peck of pickled peppers.
+A peck of pickled peppers Peter Piper picked.
+If Peter Piper picked a peck of pickled peppers,
+Where's the peck of pickled peppers Peter Piper picked?"""
+
 
 ]
