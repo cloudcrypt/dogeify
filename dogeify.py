@@ -9,7 +9,7 @@ emots = ['wow', 'amaze', 'excite']
 
 # Always strip away double-quotes, smart double-quotes, em-dashes (--)
 # and ellipses (...)
-stripPattern=ur'["\u201c\u201d\u2014\u2026]'
+stripPattern=ur'[()"\u201c\u201d\u2014\u2026]'
 lstripPattern='-'
 rstripPattern=u'?:!.,;'
 
