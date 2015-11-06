@@ -20,6 +20,18 @@
 	}
 }
 
+@media only screen and (max-height : 350px) {
+	.page-header {
+		margin-top:0px;
+		margin-bottom: 0px;
+		
+	}
+	h3 {
+		margin-top: 10px;
+		font-size: 18px;
+	}
+}
+
 .aboutbutton {
 	bottom:0px;
 	right:0px;

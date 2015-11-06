@@ -17,23 +17,18 @@
 				</div>
 			<!-- </form> -->
 
-			{% if getMode %}
-				<div id="getDiv">
-					<h3 id="dogeTextTitle2">
-						Dogeified Text:
-					</h3>
-					<h4 id="getModeDisplay">
+			<div class="muchoutput" {% if not getMode %} style="display:none" {% endif %}>
+				<h3 id="dogeTextTitle">
+					Dogeified Text:
+				</h3>
+				<h4 id="getResponse">
+					{% if getMode %}
 						{% for dogePair in result[1] %}
 							<div class="wow" style=" color:{{ dogePair[1] }}">{{ dogePair[0] }}</div>
 						{% endfor %}
-					</h4>
-				</div>
-			{% endif %}
-
-			<h3 id="dogeTextTitle" style="display: none">
-				Dogeified Text:
-			</h3>
-			<h4 id="getResponse"></h4>
+					{% endif %}
+				</h4>
+			</div>
 
         <script>
         $(function(){
@@ -45,11 +40,11 @@
 		    window.addEventListener("popstate", function(e) {
 				var newText = window.get("userText")
 				var blankInputSuffix = "dogeify?userText="
-		        $('#userTextArea').val(newText)
+			        $('#userTextArea').val(newText)
 				if (newText == null) {
 					$('#getResponse').html("")
 				} else {
-		          doDogeAjax($('#userTextArea').val())
+			 		doDogeAjax($('#userTextArea').val())
 				}
 		    });
 

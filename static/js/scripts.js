@@ -21,9 +21,7 @@ function doDogeAjax(text) {
 		    'success' : function(data) {
 		      if (data != "fail") {
 				pushDogeHistory();
-                if ($('#dogeTextTitle2')) { $('#getDiv').hide() };
 				$('#getResponse').html('');
-                $("#dogeTextTitle").show();
 				var dogePairs = data.list[1];
 				for (var i = 0; i < dogePairs.length; i++) {
 					var dogePair = dogePairs[i];
@@ -46,9 +44,7 @@ function doLuckyAjax() {
           //The response from the server
             'success' : function(data) {
               if (data != "fail") {
-                if ($('#dogeTextTitle2')) { $('#getDiv').hide() };
                 $('#getResponse').html('');
-                $("#dogeTextTitle").show();
                 var undogedText = data.list[0];
                 $('#userTextArea').val(undogedText);
 		pushDogeHistory();
