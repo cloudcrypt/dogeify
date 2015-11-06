@@ -122,6 +122,14 @@ run faster, stretch out our arms farther. . . . And one fine morning----
 
 So we beat on, boats against the current, borne back ceaselessly into the past.""",
 
+#A Christmas Carol (excerpt) - C. Dickens
+""""Bah!" said Scrooge, "Humbug!"
+He had so heated himself with rapid walking in the fog and frost, this nephew of Scrooge's, that he was all in a glow; his face was ruddy and handsome; his eyes sparkled, and his breath smoked again.
+"Christmas a humbug, uncle!" said Scrooge's nephew. "You don't mean that, I am sure?"
+"I do," said Scrooge. "Merry Christmas! What right have you to be merry? What reason have you to be merry? You're poor enough."
+"Come, then," returned the nephew gaily. "What right have you to be dismal? What reason have you to be morose? You're rich enough."
+Scrooge having no better answer ready on the spur of the moment, said, "Bah!" again; and followed it up with "Humbug.\"""",
+
 #The Cremation of Sam McGee - Robert W. Service
 """There are strange things done in the midnight sun
       By the men who moil for gold;
@@ -131,6 +139,53 @@ The Northern Lights have seen queer sights,
       But the queerest they ever did see
 Was that night on the marge of Lake Lebarge
       I cremated Sam McGee.""",
+
+# The Raven - Edgar Allan Poe
+"""Once upon a midnight dreary, while I pondered, weak and weary,
+Over many a quaint and curious volume of forgotten lore-
+    While I nodded, nearly napping, suddenly there came a tapping,
+As of some one gently rapping, rapping at my chamber door.
+"'Tis some visitor," I muttered, "tapping at my chamber door-
+            Only this and nothing more.\"""",
+
+# Stopping by Woods on a Snowy Evening - Robert Frost
+"""Whose woods these are I think I know.
+His house is in the village, though;
+He will not see me stopping here
+To watch his woods fill up with snow.
+My little horse must think it queer
+To stop without a farmhouse near
+Between the woods and frozen lake
+The darkest evening of the year.
+
+He gives his harness bells a shake
+To ask if there is some mistake.
+The only other sound's the sweep
+Of easy wind and downy flake.
+The woods are lovely, dark and deep,
+But I have promises to keep,
+And miles to go before I sleep,
+And miles to go before I sleep.""",
+
+# The Owl and the Pussy-cate
+
+"""The Owl and the Pussy-cat went to sea
+In a beautiful pea green boat,
+They took some honey, and plenty of money,
+Wrapped up in a five pound note.
+The Owl looked up to the stars above,
+And sang to a small guitar,
+"O lovely Pussy! O Pussy my love,
+What a beautiful Pussy you are,
+You are,
+You are!
+What a beautiful Pussy you are!\"""",
+
+# A Red, Red Rose - Robert Burns
+"""O my Luve's like a Red, Red Rose,
+That's newly sprung in June:
+O my Luve's like the melodie,
+That's sweetly play'd in tune.""",
 
 #===============================================================
 # Politics
@@ -145,19 +200,7 @@ guild-master and journeyman, in a word, oppressor and oppressed,
 stood in constant opposition to one another, carried on an 
 uninterrupted, now hidden, now open fight, a fight that each 
 time ended, either in a revolutionary reconstitution of society 
-at large, or in the common ruin of the contending classes.
-
-In the earlier epochs of history, we find almost everywhere a 
-complicated arrangement of society into various orders, a manifold 
-gradation of social rank. In ancient Rome we have patricians, 
-knights, plebeians, slaves; in the Middle Ages, feudal lords, 
-vassals, guild-masters, journeymen, apprentices, serfs; in almost 
-all of these classes, again, subordinate gradations.
-
-The modern bourgeois society that has sprouted from the ruins of 
-feudal society has not done away with class antagonisms. It has 
-but established new classes, new conditions of oppression, new 
-forms of struggle in place of the old ones.""",
+at large, or in the common ruin of the contending classes.""",
 
 #US Declaration of Independence
 """We hold these truths to be self-evident, that all men are created 
@@ -169,15 +212,7 @@ That whenever any Form of Government becomes destructive of these ends,
 it is the Right of the People to alter or to abolish it, and to institute 
 new Government, laying its foundation on such principles and organizing 
 its powers in such form, as to them shall seem most likely to effect 
-their Safety and Happiness. Prudence, indeed, will dictate that 
-Governments long established should not be changed for light and 
-transient causes; and accordingly all experience hath shewn, that mankind 
-are more disposed to suffer, while evils are sufferable, than to right 
-themselves by abolishing the forms to which they are accustomed. But when a 
-long train of abuses and usurpations, pursuing invariably the same Object 
-evinces a design to reduce them under absolute Despotism, it is their right, 
-it is their duty, to throw off such Government, and to provide new Guards 
-for their future security.""",
+their Safety and Happiness.""",
 
 #Gettysburg Address - A. Lincoln
 """Four score and seven years ago our fathers brought forth on this 
@@ -206,7 +241,13 @@ freedom -- and that government of the people, by the people, for the
 people, shall not perish from the earth.""",
 
 #===============================================================
+# Philosophy
+
+#"""The only good is knowledge and the only evil is ignorance.""",
+
+#===============================================================
 # Movies
+
 
 # Star Wars IV: A New Hope, Title Crawl
 
