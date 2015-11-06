@@ -12,11 +12,15 @@
 	text-align:center;
 }
 
-@media only screen and (min-width : 800px) {
+@media only screen and (min-width : 992px) {
 	.form-group{
 		margin-left:auto;
 		margin-right:auto;
 		width:80%;
+	}
+	.muchoutput {
+		width:80%;
+		margin:auto;
 	}
 }
 

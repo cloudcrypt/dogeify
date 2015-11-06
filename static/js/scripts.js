@@ -20,6 +20,7 @@ function doDogeAjax(text) {
 		  //The response from the server
 		    'success' : function(data) {
 		      if (data != "fail") {
+				$('#dogeTextTitle').show();
 				pushDogeHistory();
 				$('#getResponse').html('');
 				var dogePairs = data.list[1];
@@ -44,6 +45,7 @@ function doLuckyAjax() {
           //The response from the server
             'success' : function(data) {
               if (data != "fail") {
+		$('#dogeTextTitle').show();
                 $('#getResponse').html('');
                 var undogedText = data.list[0];
                 $('#userTextArea').val(undogedText);
