@@ -28,7 +28,7 @@ function doDogeAjax(text) {
 					var dogePair = dogePairs[i];
 					var dogeText = dogePair[0];
 					var color = dogePair[1];
-					var div = $('<div></div>')
+					var div = $('<span></span>')
 					div.addClass("wow");
 					div.css({'color': color});
 					div.text(dogeText + " ");
@@ -55,7 +55,7 @@ function doLuckyAjax() {
                     var dogePair = dogePairs[i];
                     var dogeText = dogePair[0];
                     var color = dogePair[1];
-		    var div = $('<div></div>')
+		    var div = $('<span></span>')
 		    div.addClass("wow");
 		    div.css({'color': color});
 		    div.text(dogeText + " ");
