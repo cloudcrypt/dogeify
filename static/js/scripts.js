@@ -4,7 +4,10 @@ function get(name){
    return decodeURIComponent(name[1]);
 }
 
-
+function pushDogeHistory() {
+	history.pushState(null, null, "dogeify?userText=" + encodeURIComponent($('#userTextArea').val()))
+	ga('send', 'pageview', "dogeify?userText=" + encodeURIComponent($('#userTextArea').val()));	
+}
 
 // Send an ajax POST request, and handle/format the dogeified response.
 function doDogeAjax(text) {
@@ -17,6 +20,7 @@ function doDogeAjax(text) {
 		  //The response from the server
 		    'success' : function(data) {
 		      if (data != "fail") {
+				pushDogeHistory();
                 if ($('#dogeTextTitle2')) { $('#getDiv').hide() };
 				$('#getResponse').html('');
                 $("#dogeTextTitle").show();
@@ -47,6 +51,7 @@ function doLuckyAjax() {
                 $("#dogeTextTitle").show();
                 var undogedText = data.list[0];
                 $('#userTextArea').val(undogedText);
+		pushDogeHistory();
                 var dogePairs = data.list[1];
                 for (var i = 0; i < dogePairs.length; i++) {
                     var dogePair = dogePairs[i];

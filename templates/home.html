@@ -62,13 +62,9 @@
             });
 			$('.dogeifyButton').click(_.debounce(function(){
 				  doDogeAjax($('#userTextArea').val())
-				  history.pushState(null, null, "dogeify?userText=" + encodeURIComponent($('#userTextArea').val()))
-				  ga('send', 'pageview', "dogeify?userText=" + encodeURIComponent($('#userTextArea').val()));
 			},100,true));
 			$('.luckyButton').click(_.debounce(function(){
 				  doLuckyAjax()
-				  history.pushState(null, null, "dogeify?userText=" + encodeURIComponent($('#userTextArea').val()))
-				  ga('send', 'pageview', "dogeify?userText=" + encodeURIComponent($('#userTextArea').val()));
 			},100,true));
 		});
 		
