@@ -28,11 +28,11 @@ function doDogeAjax(text) {
 					var dogePair = dogePairs[i];
 					var dogeText = dogePair[0];
 					var color = dogePair[1];
-					var div = document.createElement("div");
-					div.className = "wow";
-					div.style.color = color;
-					div.innerText = dogeText + " "; 
-					$('#getResponse').append(div);
+					var div = $('<div></div>')
+					div.addClass("wow");
+					div.css({'color': color});
+					div.text(dogeText + " ");
+					div.appendTo('#getResponse');
 				};
 		      }
 		    }
@@ -55,11 +55,11 @@ function doLuckyAjax() {
                     var dogePair = dogePairs[i];
                     var dogeText = dogePair[0];
                     var color = dogePair[1];
-                    var div = document.createElement("div");
-                    div.className = "wow";
-                    div.style.color = color;
-                    div.innerText = dogeText + " "; 
-                    $('#getResponse').append(div);
+		    var div = $('<div></div>')
+		    div.addClass("wow");
+		    div.css({'color': color});
+		    div.text(dogeText + " ");
+		    div.appendTo('#getResponse');
                 };
               }
             }
