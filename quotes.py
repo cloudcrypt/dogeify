@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 quotes = [
 
 #===============================================================
@@ -73,7 +75,7 @@ But bears it out even to the edge of doom.
   I never writ, nor no man ever loved.""",
 
 #===============================================================
-# Literature
+# Literature & Poetry
 
 #Tale of Two Cities - C. Dickens
 """It was the best of times,
@@ -119,6 +121,16 @@ recedes before us. It eluded us then, but that's no matter--tomorrow we will
 run faster, stretch out our arms farther. . . . And one fine morning----
 
 So we beat on, boats against the current, borne back ceaselessly into the past.""",
+
+#The Cremation of Sam McGee - Robert W. Service
+"""There are strange things done in the midnight sun
+      By the men who moil for gold;
+The Arctic trails have their secret tales
+      That would make your blood run cold;
+The Northern Lights have seen queer sights,
+      But the queerest they ever did see
+Was that night on the marge of Lake Lebarge
+      I cremated Sam McGee.""",
 
 #===============================================================
 # Politics
@@ -194,13 +206,98 @@ freedom -- and that government of the people, by the people, for the
 people, shall not perish from the earth.""",
 
 #===============================================================
+# Movies
+
+# Star Wars IV: A New Hope, Title Crawl
+
+"""A NEW HOPE
+It is a period of civil war.
+Rebel spaceships, striking
+from a hidden base, have won
+their first victory against
+the evil Galactic Empire.
+
+During the battle, Rebel
+spies managed to steal secret
+plans to the Empire's
+ultimate weapon, the DEATH
+STAR, an armored space
+station with enough power
+to destroy an entire planet.
+
+Pursued by the Empire's
+sinister agents, Princess
+Leia races home aboard her
+starship, custodian of the
+stolen plans that can save her
+people and restore
+freedom to the galaxy....""",
+
+#===============================================================
+# Lyrics
+
+# Who Let the Doges Out?!?
+"""Who let the dogs out
+Woof, woof, woof, woof, woof
+Who let the dogs out
+Woof, woof, woof, woof, woof
+Who let the dogs out
+Woof, woof, woof, woof, woof
+Who let the dogs out""",
+
+# Fresh Prince of Bel Air
+
+"""In west Philadelphia born and raised
+On the playground was where I spent most of my days
+Chillin' out maxin' relaxin' all cool
+And all shootin some b-ball outside of the school
+When a couple of guys who were up to no good
+Started making trouble in my neighborhood
+I got in one little fight and my mom got scared
+She said You're movin' with your auntie and uncle in Bel Air""",
+
+# Baby Got Back (reduction) - Sir Mix-a-Lot
+
+"""I like big butts and I can not lie
+You other brothers can't deny
+That when a girl walks in with an itty bitty waist
+And a round thing in your face
+You get sprung, wanna pull out your tough
+'Cause you notice that butt was stuffed
+Deep in the jeans she's wearing
+I'm hooked and I can't stop staring
+
+So, fellas! Fellas! 
+Has your girlfriend got the butt?
+Tell 'em to shake it! Shake it!
+Shake that healthy butt!
+Baby got Back!""",
+
+# Never Gonna Give You Up - Rick Astley
+"""Never gonna give you up
+Never gonna let you down
+Never gonna run around and desert you
+Never gonna make you cry
+Never gonna say goodbye
+Never gonna tell a lie and hurt you""",
+
+#===============================================================
 #TONGUE TWISTERS?!??
 
 #Peter Piper
 """Peter Piper picked a peck of pickled peppers.
 A peck of pickled peppers Peter Piper picked.
 If Peter Piper picked a peck of pickled peppers,
-Where's the peck of pickled peppers Peter Piper picked?"""
+Where's the peck of pickled peppers Peter Piper picked?""",
+
+#===============================================================
+#Misc
+
+#Wikipedia article for "dog"
+"""The domestic dog (Canis lupus familiaris or 
+Canis familiaris) is a domesticated canid which has 
+been selectively bred for millennia for various behaviors, 
+sensory capabilities, and physical attributes."""
 
 
 ]
