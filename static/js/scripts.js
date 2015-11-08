@@ -61,6 +61,10 @@ function doLuckyAjax() {
 		    div.text(dogeText + " ");
 		    div.appendTo('#getResponse');
                 };
+		
+		// Scroll the textarea to the top so
+		// the user can see the new input
+                $('#userTextArea').scrollTop(0);
               }
             }
           });
