@@ -89,8 +89,9 @@ def colorify(dogeArray):
 
 
 def main():
+	tagger = nltk.data.load("taggers/maxent_treebank_pos_tagger/english.pickle")
 	userString = raw_input("Enter text:")
-	result = dogeify(userString)
+	result = dogeify(userString, tagger)
 	print "" # so newline, many comment # such inception # wow?
 	print result
 
