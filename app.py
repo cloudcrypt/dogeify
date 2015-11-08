@@ -3,6 +3,9 @@ import random, urllib
 from dogeify import *
 from quotes import *
 import dogeconfig
+import nltk.data, nltk.tag
+
+tagger = nltk.data.load("taggers/maxent_treebank_pos_tagger/english.pickle")
 
 app = Flask(__name__)
 # app.config.from_object(__name__)
@@ -24,7 +27,7 @@ def dogeifyText():
         errormsg = colorify(["such error."])
         return render_template("home.html", getMode=True, result=["such error.", errormsg])
 
-    dogeTextArray = dogeify(text)
+    dogeTextArray = dogeify(text, tagger)
     dogeResult = colorify(dogeTextArray)
     result = [text, dogeResult]
 
@@ -36,7 +39,7 @@ def dogeifyText():
 @app.route("/lucky")
 def lucky():
     quote = random.choice(quotes)
-    dogeTextArray = dogeify(quote)
+    dogeTextArray = dogeify(quote, tagger)
     dogeResult = colorify(dogeTextArray)
     result = [quote, dogeResult]
     return jsonify(list=result)

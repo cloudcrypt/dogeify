@@ -19,7 +19,7 @@ def scrubunicode(text):
 	text = text.replace(u'\u2018', "'").replace(u'\u2019', "'")
 	return re.sub(stripPattern, "", text)
 
-def dogeify(text):	
+def dogeify(text, tagger):	
 	text = scrubunicode(text)
 	textArray = text.split()
 	nouns = []
@@ -34,7 +34,7 @@ def dogeify(text):
 		if len(word) < 1:
 			continue
 		
-		tagSymbol = nltk.pos_tag(nltk.word_tokenize(word))[0][1][:1]
+		tagSymbol = tagger.tag(nltk.word_tokenize(word))[0][1][:1]
 		if tagSymbol == "N" or tagSymbol == "J":
 			nouns.append(word)
 	lastAdj = ""
