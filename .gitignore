@@ -1,6 +1,5 @@
 # wow
 config/.portfile
-config/.keyfile
 config/.hostfile
 venv/
 

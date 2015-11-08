@@ -1,23 +1,13 @@
 
 #defaults...
 
-keyfile = "config/.keyfile"
 portfile = "config/.portfile"
 hostfile = "config/.hostfile"
 
 port = 5000
 host = '127.0.0.1' # set to '0.0.0.0' to make it available to the outside world
-secret_key = 'secret_key'
 debug = True
 
-
-
-try:
-	f = open(keyfile)
-	s = f.readline().strip()
-	secret_key = s
-except:
-	print("could not read keyfile, using default")
 
 
 try:
