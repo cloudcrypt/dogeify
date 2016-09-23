@@ -39,12 +39,7 @@ def dogeifyText():
 @app.route("/lucky")
 def lucky():
     quote = random.choice(quotes)
-    dogeTextArray = dogeify(quote, tagger)
-    dogeResult = colorify(dogeTextArray)
-    result = [quote, dogeResult]
-    return jsonify(list=result)
-            
-
+    return redirect("/dogeify?userText="+urllib.quote_plus(quote))
 
 
 if __name__ == '__main__':

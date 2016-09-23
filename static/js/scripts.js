@@ -39,37 +39,6 @@ function doDogeAjax(text) {
 		  });
 }
 
-function doLuckyAjax() {
-          $.ajax({
-            'url' : '/lucky',
-          //The response from the server
-            'success' : function(data) {
-              if (data != "fail") {
-		$('#dogeTextTitle').show();
-                $('#getResponse').html('');
-                var undogedText = data.list[0];
-                $('#userTextArea').val(undogedText);
-		pushDogeHistory();
-                var dogePairs = data.list[1];
-                for (var i = 0; i < dogePairs.length; i++) {
-                    var dogePair = dogePairs[i];
-                    var dogeText = dogePair[0];
-                    var color = dogePair[1];
-		    var div = $('<span></span>')
-		    div.addClass("wow");
-		    div.css({'color': color});
-		    div.text(dogeText + " ");
-		    div.appendTo('#getResponse');
-                };
-		
-		// Scroll the textarea to the top so
-		// the user can see the new input
-                $('#userTextArea').scrollTop(0);
-              }
-            }
-          });
-}
-
 /**
  * Character Counter v1.5.1
  * ======================
