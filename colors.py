@@ -1,7 +1,5 @@
 htmlColors = {
 'aqua':                 '#00FFFF',
-'aquamarine':           '#7FFFD4',
-'bisque':               '#FFE4C4',
 'black':                '#000000',
 'blanchedalmond':       '#FFEBCD',
 'blue':                 '#0000FF',
@@ -39,7 +37,6 @@ htmlColors = {
 'firebrick':            '#B22222',
 'forestgreen':          '#228B22',
 'fuchsia':              '#FF00FF',
-'gainsboro':            '#DCDCDC',
 'gold':                 '#FFD700',
 'goldenrod':            '#DAA520',
 'gray':                 '#808080',
@@ -49,7 +46,6 @@ htmlColors = {
 'indianred':            '#CD5C5C',
 'indigo':               '#4B0082',
 'khaki':                '#F0E68C',
-'lavenderblush':        '#FFF0F5',
 'lawngreen':            '#7CFC00',
 'lightblue':            '#ADD8E6',
 'lightcoral':           '#F08080',
