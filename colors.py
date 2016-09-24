@@ -82,8 +82,6 @@ htmlColors = {
 'orange':               '#FFA500',
 'orangered':            '#FF4500',
 'orchid':               '#DA70D6',
-'palegoldenrod':        '#EEE8AA',
-'palegreen':            '#98FB98',
 'paleturquoise':        '#AFEEEE',
 'palevioletred':        '#DB7093',
 'peachpuff':            '#FFDAB9',
