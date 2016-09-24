@@ -11,7 +11,7 @@
 				<div class="form-group">
 					 <textarea class="form-control" id="userTextArea" name="userText" type="text" placeholder="So wow." rows="4">{{ result[0] }}</textarea>
 					 <br/>
-					 <button id="submitDoge" class="btn btn-success dogeifyButton">Dogeify!</button>
+					 <a id="submitDoge" class="btn btn-success dogeifyButton" onclick="doDogeify()">Dogeify!</a>
 					 <a id="lucky" class="btn btn-info luckyButton" href="/lucky">I'm Feeling Lucky</a>
 					 <br/>
 				</div>
@@ -36,18 +36,7 @@
       			// Disable caching of AJAX responses
       			cache: false,
 			});
-		    // Update the textarea if the user scrubs through browser history
-		    window.addEventListener("popstate", function(e) {
-				var newText = window.get("userText")
-				var blankInputSuffix = "dogeify?userText="
-			        $('#userTextArea').val(newText)
-				if (newText == null) {
-					$('#getResponse').html("")
-				} else {
-			 		doDogeAjax($('#userTextArea').val())
-				}
-		    });
-
+			
 		    //init Character counter
             $("#userTextArea").characterCounter({
                         limit:2000,
@@ -55,9 +44,6 @@
                         onExceed: function(){$('#submitDoge').attr('disabled', 'disabled');},
                         onDeceed: function(){$('#submitDoge').removeAttr('disabled');}
             });
-			$('.dogeifyButton').click(_.debounce(function(){
-				  doDogeAjax($('#userTextArea').val())
-			},100,true));
 		});
 
 		jQuery(document).ready(function($){

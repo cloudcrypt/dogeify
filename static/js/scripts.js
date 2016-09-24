@@ -1,42 +1,7 @@
-// Utility function to get the value of a get request argument
-function get(name){
-   if(name=(new RegExp('[?&]'+encodeURIComponent(name)+'=([^&]*)')).exec(location.search))
-   return decodeURIComponent(name[1]);
-}
 
-function pushDogeHistory() {
-	history.pushState(null, null, "dogeify?userText=" + encodeURIComponent($('#userTextArea').val()))
-	ga('send', 'pageview', "dogeify?userText=" + encodeURIComponent($('#userTextArea').val()));	
-}
 
-// Send an ajax POST request, and handle/format the dogeified response.
-function doDogeAjax(text) {
-		  $.ajax({
-		    'url' : '/dogeify',
-		    'type' : 'POST',
-		    'data' : {
-		      'userText' : text
-		    },
-		  //The response from the server
-		    'success' : function(data) {
-		      if (data != "fail") {
-				$('#dogeTextTitle').show();
-				pushDogeHistory();
-				$('#getResponse').html('');
-				var dogePairs = data.list[1];
-				for (var i = 0; i < dogePairs.length; i++) {
-					var dogePair = dogePairs[i];
-					var dogeText = dogePair[0];
-					var color = dogePair[1];
-					var div = $('<span></span>')
-					div.addClass("wow");
-					div.css({'color': color});
-					div.text(dogeText + " ");
-					div.appendTo('#getResponse');
-				};
-		      }
-		    }
-		  });
+function doDogeify() {
+  window.location.href = "dogeify?userText="+$('#userTextArea').val();
 }
 
 /**
