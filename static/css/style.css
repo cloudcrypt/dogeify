@@ -36,7 +36,7 @@
 	}
 }
 
-.aboutbutton {
+.dogeNavBar {
 	bottom:0px;
 	right:0px;
 	position:absolute;
@@ -73,4 +73,12 @@ margin-right: -15px !important;
 
 .navbar-right {
 float: right!important;
+}
+
+body {
+  padding-right: 0px !important
+}
+
+.modal-open {
+  overflow-y: auto;
 }
