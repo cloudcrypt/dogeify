@@ -1,7 +1,7 @@
 
 
 function doDogeify() {
-  window.location.href = "dogeify?userText="+$('#userTextArea').val();
+  window.location.href = "dogeify?userText="+escape( $('#userTextArea').val() );
 }
 
 /**
