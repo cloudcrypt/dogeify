@@ -30,23 +30,32 @@ def scrubunicode(text):
 def dogeify(text, tagger):	
 	text = scrubunicode(text)
 	textArray = text.split()
+	words = []
 	nouns = []
 	resultArray = []
 	for word in textArray:
-		if word.lower() in adjs:
-			continue
 		# strip away unwanted characters
 		word = word.lstrip(lstripPattern).rstrip(rstripPattern)
 
 		# If the entire word was scrubbed away, don't pass it to NLTK!
 		if len(word) < 1:
 			continue
-		
-		if word.lower() in substitutions:
+
+		# If the word is one of dogeify's adjectives, skip it
+		if word.lower() in adjs:
+			continue
+
+		words.append(word)
+
+	tags = tagger.tag(words)
+
+	for pair in tags:
+		word = pair[0];
+		tagSymbol = pair[1];
+		if word in substitutions:
 			nouns.append(word)
 		else:
-			tagSymbol = tagger.tag(nltk.word_tokenize(word))[0][1][:1]
-			if tagSymbol == "N" or tagSymbol == "J":
+			if tagSymbol[:1] == "N" or tagSymbol[:1] == "J":
 				nouns.append(word)
 	
 	lastAdj = ""
