@@ -7,6 +7,14 @@ from colors import *
 adjs = ['so', 'such', 'very', 'much', 'many', 'how']
 emots = ['wow', 'amaze', 'excite']
 
+substitutions = {
+	'dog': 'doge',
+	'dogee': 'doge',
+	'please': 'plz',
+	'really': 'rly',
+	'cat': 'cate' }
+
+
 # Always strip away double-quotes, smart double-quotes, em-dashes (--)
 # and ellipses (...)
 stripPattern=ur'[()"\u201c\u201d\u2014\u2026]'
@@ -34,9 +42,13 @@ def dogeify(text, tagger):
 		if len(word) < 1:
 			continue
 		
-		tagSymbol = tagger.tag(nltk.word_tokenize(word))[0][1][:1]
-		if tagSymbol == "N" or tagSymbol == "J":
+		if word.lower() in substitutions:
 			nouns.append(word)
+		else:
+			tagSymbol = tagger.tag(nltk.word_tokenize(word))[0][1][:1]
+			if tagSymbol == "N" or tagSymbol == "J":
+				nouns.append(word)
+	
 	lastAdj = ""
 	lastAdj2 = ""
 	lastEmot = ""
@@ -64,11 +76,8 @@ def dogeify(text, tagger):
 	index = 0
 	for originalWord in resultArray:
 		word = originalWord
-		word = word.replace('dog', 'doge')
-		word = word.replace('dogee', 'doge')
-		word = word.replace('please', 'plz')
-		word = word.replace('really', 'rly')
-		word = word.replace('cat', 'cate')
+		for subWord in substitutions:
+			word = word.replace(subWord, substitutions[subWord]);
 		resultArray[index] = word
 		index += 1
 	
